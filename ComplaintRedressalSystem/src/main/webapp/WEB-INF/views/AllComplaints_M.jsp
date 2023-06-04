@@ -137,11 +137,17 @@ section:after {
 	<a href="AllEngineers_M" id="sidbutton"><i class="fa fa fa-user"
 		style="font-size: 20px; margin-right: 10px;"></i>All Engineer</a>
 		<br>
+		
+		<a href="AllUsers_M" id="sidbutton"><i class="fa fa fa-user"
+		style="font-size: 20px; margin-right: 10px;"></i>All User</a>
+		<br>
 
 	<a href="AllComplaints_M" id="sidbutton" class="badge1"
 		data-badge=<%-- <%=resultSet1.getString("count(*)")%> --%>><i
 		class="fa fa fa-clipboard"
-		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> </nav> 
+		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> </nav>
+
+
 		<article>
 
 	<h2>All Complaints</h2>
@@ -166,10 +172,18 @@ section:after {
 	                 <td>${complaint.title}</td>
 	                 <td>${complaint.description}</td>
 	                 <td><select name="eid" id="eid" class="form-select" aria-label="Default select example">
-	                        <option value="eid">${complaint.eid}</option>
-	                        <c:forEach var="manager" items="${managers}">
-					          <option value="eid">${manager.id}</option>
-					        </c:forEach>
+	                        <option value="0">0</option>
+	                        <option value="0">1</option>
+	                        <option value="0">2</option>
+	                        <option value="0">3</option>
+	                        <option value="0">4</option>
+	                        <option value="0">5</option>
+	                        <option value="0">6</option>
+	                        <option value="0">7</option>
+	                        <option value="0">8</option>
+	                        <option value="0">9</option>
+	                        <option value="0">10</option>
+	                       
 				          </select>
 				     </td>
 	                 <td>${complaint.userfeedback}</td>

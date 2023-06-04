@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>TODO supply a title</title>
+        <title>Complain Redressal SYstem</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,7 +59,7 @@ p.b {
     </div>
 </div>
 
-<p class="a">Complaint Registration Portal</p>
+<p class="a">Complaint Redressal System</p>
 <p class="b">Complaint Box</p>
 </body>
 </html>

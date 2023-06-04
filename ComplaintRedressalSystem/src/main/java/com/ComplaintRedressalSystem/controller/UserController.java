@@ -78,6 +78,14 @@ public class UserController {
 		  return "allusers";
 	 }
 	 
+	 @RequestMapping(value = "AllUsers_M" , method = RequestMethod.GET)
+	 public String allUser2(Model model)
+	 {
+		  List<User> users=userService.allUsers();
+		  model.addAttribute("users", users);
+		  return "AllUsers_M";
+	 }
+	 
 	 
 	 @RequestMapping(value = "checkuserlogin" ,method = RequestMethod.POST)
 	 public String checkUerLogin(Model model,

@@ -137,6 +137,10 @@ section:after {
 	<a href="AllEngineers_M" id="sidbutton"><i class="fa fa fa-user"
 		style="font-size: 20px; margin-right: 10px;"></i>All Engineer</a>
 		<br>
+		
+		<a href="AllUsers_M" id="sidbutton"><i class="fa fa fa-user"
+		style="font-size: 20px; margin-right: 10px;"></i>All User</a>
+		<br>
 
 	<a href="AllComplaints_M" id="sidbutton" class="badge1"
 		data-badge=<%-- <%=resultSet1.getString("count(*)")%> --%>><i

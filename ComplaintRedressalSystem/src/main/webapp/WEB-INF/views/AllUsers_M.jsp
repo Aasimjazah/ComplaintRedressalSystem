@@ -145,13 +145,12 @@ section:after {
 	<a href="AllComplaints_M" id="sidbutton" class="badge1"
 		data-badge=<%-- <%=resultSet1.getString("count(*)")%> --%>><i
 		class="fa fa fa-clipboard"
-		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> 
-
+		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a>  
 	
 	<br> </nav> 
   <article>
 
-	<h2>All Engineers</h2>
+	<h2>All Users</h2>
 	<br>
 	<div class="w3-container">
 		<table class="w3-table w3-bordered">
@@ -163,12 +162,12 @@ section:after {
 				<th>Action</th>
 			</tr>
  
-			  <c:forEach var="engineer" items="${engineers}">
+			  <c:forEach var="user" items="${users}">
 			     <tr>
-                 <td>${engineer.id}</td>
-                 <td>${engineer.name}</td>
-                 <td>${engineer.email}</td>
-                 <td>${engineer.phone}</td>
+                 <td>${user.id}</td>
+                 <td>${user.name}</td>
+                 <td>${user.email}</td>
+                 <td>${user.phone}</td>
                  <td><a href="#"><button class="button button2"><i class="fa fa-trash" style="font-size:20px;"></i></button></a></td>
                  
                  </tr> 
