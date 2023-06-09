@@ -139,6 +139,9 @@ section:after {
 		
 			<a href="allengineer" id="sidbutton"><i class="fa fa fa-user"
 		style="font-size: 20px; margin-right: 10px;"></i>All Engineer</a>
+		
+			<a href="assignedcomplaint?id=${engineer.id}" id="sidbutton"><i class="fa fa fa-user"
+		style="font-size: 20px; margin-right: 10px;"></i>Assigned Complaint</a>
 	<br>
 	<br>
  </nav> 

@@ -108,51 +108,39 @@ section:after {
 		<a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a> <a
 			href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> <a
 			class="active" href="profile.jsp"><i class="fa fa-fw fa-user"></i>Profile</a>
-		<a href="logout" style="float: right;"><i
+		<a href="index" style="float: right;"><i
 			class="fa fa-sign-out"></i>Logout</a>
 	</div>
-<c:set var="manager" value="${sessionScope.manager}" />
+
 	<section> <nav>
-	<center><h2>Manager</h2></center>
+	<center><h2>Engineer</h2></center>
 	<center>
 		<i class="fa fa-user-circle-o"
 			style="font-size: 100px; color: #FE9800"></i>
 	</center>
 	<center>
 		<p>
-			+91 ${manager.phone }</p>
+			+91 ${engineer.phone }</p>
 		<p>
 			<i class="fa fa-address-card"
 				style="font-size: 20px; margin-right: 10px;"></i>
-			${manager.name }</p>
+			${engineer.name }</p>
 		<p>
 			<i class="fa fa-envelope"
-				style="font-size: 20px; margin-right: 10px;"></i>${manager.email }</p>
+				style="font-size: 20px; margin-right: 10px;"></i>${engineer.email }</p>
 
 
 	</center>
-
-	<br>
-	
-	<a href="AllEngineers_M" id="sidbutton"><i class="fa fa fa-user"
-		style="font-size: 20px; margin-right: 10px;"></i>All Engineer</a>
-		<br>
-		
-		<a href="AllUsers_M" id="sidbutton"><i class="fa fa fa-user"
-		style="font-size: 20px; margin-right: 10px;"></i>All User</a>
-		<br>
-
-	<a href="AllComplaints_M" id="sidbutton" class="badge1"
-		data-badge=<%-- <%=resultSet1.getString("count(*)")%> --%>><i
-		class="fa fa fa-clipboard"
-		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> </nav>
-
-
-		<article>
+	<a href="assignedcomplaint?id=${engineer.id}" id="sidbutton"><i class="fa fa fa-user"
+		style="font-size: 20px; margin-right: 10px;"></i>Assigned Complaint</a>
+	</nav> 
+  <article>
 
 	<h2>All Complaints</h2>
+		
 	<br>
-	<div class="w3-container">
+	<br>
+<div class="w3-container">
 		<table class="w3-table w3-bordered">
 			<tr style="color: #FE9800;">
 				<th>ID</th>
@@ -162,38 +150,22 @@ section:after {
 				<th>Engineer ID</th>
 				<th>User FeedBack</th>
 				<th>Status</th>
+				<th>Action</th>
 			</tr>
-			<c:forEach var="complaint" items="${complaints}">
+			<c:forEach var="complaint" items="${sessionScope.complaints}">
 				<tr>
 					<td>${complaint.id}</td>
 					<td>${complaint.uid}</td>
 					<td>${complaint.title}</td>
 					<td>${complaint.description}</td>
-				
-					<td>
-						<form action="editcomplaint" method="get">
-							<input type="hidden" name="uid" value="${complaint.uid}" /> <select
-								name="eid" id="eid" class="form-select"
-								aria-label="Default select example">
-								<option value="${complaint.eid}" selected>${complaint.eid}</option>
-								<c:forEach var="engineer" items="${engineers}">
-									<c:choose>
-										<c:when test="${engineer.id eq complaint.eid}">
-											<option value="${engineer.id}" selected>${engineer.id}</option>
-										</c:when>
-										<c:otherwise>
-											<option value="${engineer.id}">${engineer.id}</option>
-										</c:otherwise>
-									</c:choose>
-								</c:forEach>
-							</select>
-							<button type="submit" class="button button1">
-								<i class="fa fa-check" style="font-size: 20px;"></i>
-							</button>
-						</form>
-					</td>
+					<td>${complaint.eid}</td>
 					<td>${complaint.userfeedback}</td>
 					<td>${complaint.status}</td>
+					<td><a href="solvedcomplaint?id=${complaint.id}&uid=${complaint.uid}&eid=${complaint.eid}">
+							<button class="button button1"><i class="fa fa-check" style="font-size:20px;"></i>
+							</button>
+						</a>
+					</td>
 				</tr>
 			</c:forEach>
 		</table>

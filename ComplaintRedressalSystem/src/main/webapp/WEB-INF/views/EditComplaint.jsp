@@ -145,60 +145,33 @@ section:after {
 	<a href="AllComplaints_M" id="sidbutton" class="badge1"
 		data-badge=<%-- <%=resultSet1.getString("count(*)")%> --%>><i
 		class="fa fa fa-clipboard"
-		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> </nav>
+		style="font-size: 20px; margin-right: 10px;"></i>All Complaints</a> </nav> <article>
 
-
-		<article>
-
-	<h2>All Complaints</h2>
+	
 	<br>
 	<div class="w3-container">
-		<table class="w3-table w3-bordered">
-			<tr style="color: #FE9800;">
-				<th>ID</th>
-				<th>User ID</th>
-				<th>Title</th>
-				<th>Description</th>
-				<th>Engineer ID</th>
-				<th>User FeedBack</th>
-				<th>Status</th>
-			</tr>
-			<c:forEach var="complaint" items="${complaints}">
+	
+	
+	<h1>Edit complaint section</h1>
+	
+	<c:forEach var="usercomplaint" items="${usercomplaints}">
+	<form action="ChangeComplaintData" method="post">
 				<tr>
-					<td>${complaint.id}</td>
-					<td>${complaint.uid}</td>
-					<td>${complaint.title}</td>
-					<td>${complaint.description}</td>
-				
-					<td>
-						<form action="editcomplaint" method="get">
-							<input type="hidden" name="uid" value="${complaint.uid}" /> <select
-								name="eid" id="eid" class="form-select"
-								aria-label="Default select example">
-								<option value="${complaint.eid}" selected>${complaint.eid}</option>
-								<c:forEach var="engineer" items="${engineers}">
-									<c:choose>
-										<c:when test="${engineer.id eq complaint.eid}">
-											<option value="${engineer.id}" selected>${engineer.id}</option>
-										</c:when>
-										<c:otherwise>
-											<option value="${engineer.id}">${engineer.id}</option>
-										</c:otherwise>
-									</c:choose>
-								</c:forEach>
-							</select>
-							<button type="submit" class="button button1">
-								<i class="fa fa-check" style="font-size: 20px;"></i>
-							</button>
-						</form>
-					</td>
-					<td>${complaint.userfeedback}</td>
-					<td>${complaint.status}</td>
-				</tr>
+			<td><input type="text" value="${usercomplaint.id}" name="id" /></td>
+			<td><input type="text" value="${usercomplaint.title}" name="title" /></td>
+			<td><input type="text" value="${usercomplaint.description}" name="description" /></td>
+			<td><input type="text" value="${usercomplaint.eid}" name="eid" /></td>
+			<td><input type="text" value="${usercomplaint.status}" name="status" /></td>
+			
+			<td><button class="button button2" type="submit"><i class="fa fa-check" style="font-size:20px;"></i></button></td>
+			</tr>
+			
+	</form>
 			</c:forEach>
-		</table>
 	</div>
-	</article> </section>
+	</article>
+
+	 </section>
 
 </body>
 </html>

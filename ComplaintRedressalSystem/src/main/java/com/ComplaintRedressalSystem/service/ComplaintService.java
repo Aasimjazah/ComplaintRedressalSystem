@@ -26,5 +26,27 @@ public class ComplaintService {
 	{
 		return complaintDao.allComplaints();
 	}
+	
+	public void editComplaint(int uid, int eid) 
+	{
+		 complaintDao.editComplaint(uid,eid);
+		
+	}
+
+	public List<Complaint> assignedComplaint(int id) {
+		
+		return complaintDao.assignedComplaint(id);
+	}
+
+	public void solvedComplaint(int id, int uid, int eid) {
+		
+		complaintDao.solvedComplaint(id,uid,eid);
+	}
+
+	public void completeComplaint(int id, int uid , int eid, String feedback) {
+
+       complaintDao.completeComplaint(id,uid,eid,feedback);
+		
+	}
 
 }
